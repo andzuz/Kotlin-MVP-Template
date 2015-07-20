@@ -1,4 +1,5 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:id="@+id/rootLayout"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -8,16 +9,20 @@
 
     <Button
         android:id="@+id/clickMeButton"
-        android:layout_alignParentTop="true"
         android:text="CHECK IP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <android.support.v7.widget.RecyclerView
-        android:layout_below="@+id/clickMeButton"
+        android:visibility="gone"
         android:id="@+id/recyclerView"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-</RelativeLayout>
+    <com.example.andrzejz.kotlinproject.views.utils.MainContainer
+        android:id="@+id/main_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
