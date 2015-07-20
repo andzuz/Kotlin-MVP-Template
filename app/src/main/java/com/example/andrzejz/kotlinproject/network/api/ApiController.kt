@@ -1,6 +1,6 @@
 package com.example.andrzejz.kotlinproject.network.api
 
-import com.example.andrzejz.kotlinproject.network.traits.FakeApi
+import com.example.andrzejz.kotlinproject.network.traits.ApiService
 import com.example.andrzejz.kotlinproject.singletons.Constants
 import retrofit.RestAdapter
 
@@ -10,7 +10,7 @@ import retrofit.RestAdapter
 
 object ApiController {
 
-    public val api: FakeApi = createRestAdapter().create(javaClass<FakeApi>())
+    public val api: ApiService = createRestAdapter().create(javaClass<ApiService>())
 
     fun createRestAdapter(): RestAdapter {
         val restAdapter = RestAdapter.Builder()

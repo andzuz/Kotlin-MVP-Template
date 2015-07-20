@@ -5,7 +5,7 @@ import android.support.v7.app.ActionBarActivity
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.example.andrzejz.kotlinproject.network.api.ApiController
-import com.example.andrzejz.kotlinproject.network.traits.FakeApi
+import com.example.andrzejz.kotlinproject.network.traits.ApiService
 import com.example.andrzejz.kotlinproject.singletons.Constants
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.intentFor
@@ -20,6 +20,6 @@ fun AppCompatActivity.showSnackBar(text: String, view: View) {
         .show()
 }
 
-fun AppCompatActivity.getApi(): FakeApi {
+fun AppCompatActivity.getApi(): ApiService {
     return ApiController.api
 }

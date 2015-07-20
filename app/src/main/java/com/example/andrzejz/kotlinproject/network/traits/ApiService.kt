@@ -10,7 +10,7 @@ import retrofit.http.GET
  * Created by Andrzej Z on 7/16/2015.
  */
 
-interface FakeApi {
+interface ApiService {
 
     [GET(Constants.ENDPOINT)]
     fun getGoogle(callback: Callback<IpResponse>)
