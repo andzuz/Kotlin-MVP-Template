@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -28,50 +29,38 @@ import retrofit.client.Response
 
 public class MainActivity : AppCompatActivity() {
 
-    private val callback = object : Callback<IpResponse>
-    {
-        override fun success(t: IpResponse?, response: Response?) {
-            t?.let {
-                alert("Warning", "Do you want to launch SecAct?") {
-                    positiveButton("Yes") {
-                    }
-
-                    negativeButton("Hell no!") {}
-                }.show()
-            }
-        }
-
-        override fun failure(error: RetrofitError?) {
-            throw UnsupportedOperationException()
-        }
-
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super<AppCompatActivity>.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setupUi();
-    }
-
-    private fun setupUi() {
-        setupListeners()
-        setupRecyclerView();
+        setSupportActionBar(toolbar as Toolbar)
         main_container.showView(SampleViewImpl(this))
     }
 
-    private val myAdapter = MyAdapter(DataProvider.dataList)
-
-    private fun setupRecyclerView() {
-        recyclerView.setLayoutManager(LinearLayoutManager(this))
-        recyclerView.setAdapter(myAdapter)
-        myAdapter.notifyDataSetChanged()
-    }
-
-    private fun setupListeners() {
-        clickMeButton.setOnClickListener {
-            showSnackBar("Clicked!", rootLayout)
-            getApi().getGoogle(callback)
-        }
-    }
-
 }
+
+//    private val callback = object : Callback<IpResponse>
+//    {
+//        override fun success(t: IpResponse?, response: Response?) {
+//            t?.let {
+//                alert("Warning", "Do you want to launch SecAct?") {
+//                    positiveButton("Yes") {
+//                    }
+//
+//                    negativeButton("Hell no!") {}
+//                }.show()
+//            }
+//        }
+//
+//        override fun failure(error: RetrofitError?) {
+//            throw UnsupportedOperationException()
+//        }
+//
+
+
+//    }
+
+//    private fun setupRecyclerView() {
+//        recyclerView.setLayoutManager(LinearLayoutManager(this))
+//        recyclerView.setAdapter(myAdapter)
+//        myAdapter.notifyDataSetChanged()
+//    }

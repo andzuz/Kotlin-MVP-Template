@@ -9,6 +9,7 @@ import com.example.andrzejz.kotlinproject.presenters.SamplePresenter
 import com.example.andrzejz.kotlinproject.views.abstract_views.SampleView
 import com.example.andrzejz.kotlinproject.views.implementations.BaseViewImpl
 import kotlinx.android.synthetic.view_sample.*;
+import kotlinx.android.synthetic.view_sample.view.*;
 import kotlinx.android.synthetic.activity_main.*;
 
 /**
@@ -36,7 +37,7 @@ public class SampleViewImpl : BaseViewImpl<SamplePresenter>, SampleView {
     }
 
     override fun doSomething() {
-        Log.i("LOG", "LOG")
+        sample_text.setText("Something")
     }
 
 }
