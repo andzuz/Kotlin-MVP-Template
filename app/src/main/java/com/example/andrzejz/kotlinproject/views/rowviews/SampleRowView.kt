@@ -11,18 +11,14 @@ import com.example.andrzejz.kotlinproject.network.models.IpResponse
 
 class SampleRowView(context: Context) : BaseRowView<IpResponse>(context) {
 
-    var text: TextView? = null;
-
-    override fun findViews() {
-        text = findViewById(R.id.text) as TextView?;
-    }
+    val text: TextView by lazy { findViewById(R.id.text) as TextView };
 
     override fun getRowLayoutId(): Int {
         return R.layout.sample_list_row;
     }
 
     override fun setData(item: IpResponse) {
-        text?.text = item.ip;
+        text.text = item.ip;
     }
 
 }

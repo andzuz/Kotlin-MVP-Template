@@ -18,7 +18,6 @@ abstract class BaseRowView<IT>: RelativeLayout {
     private fun init(context: Context) {
         val viewLayout = getRowLayoutId();
         LayoutInflater.from(context).inflate(viewLayout, this, true);
-        findViews();
     }
 
     public constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
@@ -29,7 +28,6 @@ abstract class BaseRowView<IT>: RelativeLayout {
         init(context);
     }
 
-    abstract fun findViews();
     abstract fun getRowLayoutId(): Int;
     abstract fun setData(item: IT);
 
