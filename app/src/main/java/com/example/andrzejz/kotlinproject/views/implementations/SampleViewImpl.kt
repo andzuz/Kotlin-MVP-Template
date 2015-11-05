@@ -6,8 +6,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import com.example.andrzejz.kotlinproject.R
 import com.example.andrzejz.kotlinproject.presenters.SamplePresenter
-import com.example.andrzejz.kotlinproject.views.abstract_views.SampleView
-import com.example.andrzejz.kotlinproject.views.implementations.BaseViewImpl
+import com.example.andrzejz.kotlinproject.views.abstract_views.SampleViewContract
+import com.example.andrzejz.kotlinproject.views.implementations.BaseView
 import kotlinx.android.synthetic.view_sample.*;
 import kotlinx.android.synthetic.view_sample.view.*;
 import kotlinx.android.synthetic.activity_main.*;
@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.activity_main.*;
  * Created by Andrzej Z on 7/20/2015.
  */
 
-public class SampleViewImpl : BaseViewImpl<SamplePresenter>, SampleView {
+public class SampleViewImpl : BaseView<SamplePresenter>, SampleViewContract {
 
     public constructor(context: Context) : super(context) {}
 

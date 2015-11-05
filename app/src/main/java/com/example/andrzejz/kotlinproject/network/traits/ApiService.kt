@@ -12,7 +12,7 @@ import retrofit.http.GET
 
 interface ApiService {
 
-    [GET(Constants.ENDPOINT)]
+    @GET(Constants.ENDPOINT)
     fun getGoogle(callback: Callback<IpResponse>)
 
 }

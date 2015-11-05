@@ -1,13 +1,13 @@
 package com.example.andrzejz.kotlinproject.presenters
 
-import com.example.andrzejz.kotlinproject.views.abstract_views.BaseView
-import com.example.andrzejz.kotlinproject.views.implementations.BaseViewImpl
+import com.example.andrzejz.kotlinproject.views.abstract_views.ViewContract
+import com.example.andrzejz.kotlinproject.views.implementations.BaseView
 
 /**
  * Created by Andrzej Z on 7/20/2015.
  */
 
-public abstract class BasePresenter<T : BaseView>(receiver: T) {
+public abstract class BasePresenter<T : ViewContract>(receiver: T) {
 
     protected var receiver: T? = receiver
 
