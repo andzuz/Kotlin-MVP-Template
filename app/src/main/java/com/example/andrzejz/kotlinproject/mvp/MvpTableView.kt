@@ -1,4 +1,4 @@
-package com.example.andrzejz.kotlinproject.views.implementations
+package com.example.andrzejz.kotlinproject.mvp
 
 import android.content.Context
 import android.support.v7.widget.LinearLayoutManager
@@ -6,7 +6,8 @@ import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
 import android.view.ViewGroup
 import com.example.andrzejz.kotlinproject.R
-import com.example.andrzejz.kotlinproject.views.abstract_views.TableViewContract
+import com.example.andrzejz.kotlinproject.mvp.MvpView
+import com.example.andrzejz.kotlinproject.mvp.TableViewContract
 import kotlinx.android.synthetic.view_list.view.recycler;
 import java.util.*
 
@@ -14,7 +15,7 @@ import java.util.*
  * Created by andrzejzuzak on 22/10/15.
  */
 
-public abstract class BaseList<PR, IT, VH: RecyclerView.ViewHolder>: BaseView<PR>, TableViewContract<IT> {
+public abstract class MvpTableView<PR, IT, VH: RecyclerView.ViewHolder>: MvpView<PR>, TableViewContract<IT> {
 
     var adapter: MyAdapter? = null;
 

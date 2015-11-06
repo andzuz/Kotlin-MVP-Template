@@ -1,5 +1,6 @@
-package com.example.andrzejz.kotlinproject.views.abstract_views
+package com.example.andrzejz.kotlinproject.mvp
 
+import com.example.andrzejz.kotlinproject.mvp.ViewContract
 import java.util.*
 
 /**

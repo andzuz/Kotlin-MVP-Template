@@ -5,6 +5,8 @@ import com.example.andrzejz.kotlinproject.singletons.Constants
 import retrofit.Callback
 import retrofit.RestAdapter
 import retrofit.http.GET
+import rx.Observable
+import java.util.*
 
 /**
  * Created by Andrzej Z on 7/16/2015.
@@ -13,6 +15,6 @@ import retrofit.http.GET
 interface ApiService {
 
     @GET(Constants.ENDPOINT)
-    fun getGoogle(callback: Callback<IpResponse>)
+    fun getGoogle(): Observable<IpResponse>
 
 }

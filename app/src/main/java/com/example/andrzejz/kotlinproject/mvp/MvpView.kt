@@ -1,4 +1,4 @@
-package com.example.andrzejz.kotlinproject.views.implementations
+package com.example.andrzejz.kotlinproject.mvp
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,14 +6,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.RelativeLayout
 import com.example.andrzejz.kotlinproject.R
-import com.example.andrzejz.kotlinproject.presenters.BasePresenter
-import com.example.andrzejz.kotlinproject.views.abstract_views.ViewContract
+import com.example.andrzejz.kotlinproject.mvp.MvpPresenter
+import com.example.andrzejz.kotlinproject.mvp.ViewContract
 
 /**
  * Created by Andrzej Z on 7/20/2015.
  */
 
-public abstract class BaseView<T> : RelativeLayout {
+public abstract class MvpView<T> : RelativeLayout {
 
     protected var presenter: T
 
@@ -37,7 +37,6 @@ public abstract class BaseView<T> : RelativeLayout {
         val inflater: LayoutInflater =
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         inflater.inflate(getLayoutId(), this)
-
         afterViews()
     }
 

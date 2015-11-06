@@ -1,4 +1,4 @@
-package com.example.andrzejz.kotlinproject.views.rowviews
+package com.example.andrzejz.kotlinproject.mvp
 
 import android.content.Context
 import android.util.AttributeSet
@@ -9,7 +9,7 @@ import android.widget.RelativeLayout
  * Created by andrzejzuzak on 22/10/15.
  */
 
-abstract class BaseRowView<IT>: RelativeLayout {
+abstract class MvpRowView<IT>: RelativeLayout {
 
     public constructor(context: Context) : super(context) {
         init(context);

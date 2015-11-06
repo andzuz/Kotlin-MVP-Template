@@ -2,6 +2,7 @@ package com.example.andrzejz.kotlinproject.views.implementations
 
 import android.content.Context
 import android.util.Log
+import com.example.andrzejz.kotlinproject.mvp.MvpTableView
 import com.example.andrzejz.kotlinproject.network.models.IpResponse
 import com.example.andrzejz.kotlinproject.presenters.SampleListPresenter
 import com.example.andrzejz.kotlinproject.presenters.SamplePresenter
@@ -13,7 +14,7 @@ import java.util.*
  * Created by andrzejzuzak on 22/10/15.
  */
 
-class SampleListImpl(context: Context) : BaseList<SampleListPresenter, IpResponse, SampleViewHolder>(context) {
+class SampleListImpl(context: Context) : MvpTableView<SampleListPresenter, IpResponse, SampleViewHolder>(context) {
 
     override fun afterListInit() {
         val sampleItem = IpResponse("SIALALA");

@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import com.example.andrzejz.kotlinproject.views.implementations.BaseView
+import com.example.andrzejz.kotlinproject.mvp.MvpView
 
 /**
  * Created by Andrzej Z on 7/20/2015.
