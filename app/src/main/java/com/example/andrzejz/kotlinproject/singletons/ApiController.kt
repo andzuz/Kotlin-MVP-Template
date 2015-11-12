@@ -3,7 +3,7 @@ package com.example.andrzejz.kotlinproject.singletons
 import com.example.andrzejz.kotlinproject.network.models.IpResponse
 import com.example.andrzejz.kotlinproject.network.traits.ApiService
 import com.example.andrzejz.kotlinproject.singletons.Constants
-import retrofit.RestAdapter
+import retrofit.Retrofit
 import rx.Observable
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
@@ -14,11 +14,11 @@ import rx.schedulers.Schedulers
 
 object ApiController {
 
-    public val api: ApiService = createRestAdapter().create(ApiService::class.java)
+    public val api: ApiService = createAdapter().create(ApiService::class.java)
 
-    fun createRestAdapter(): RestAdapter {
-        val restAdapter = RestAdapter.Builder()
-                .setEndpoint(Constants.BASE_URL)
+    fun createAdapter(): Retrofit {
+        val restAdapter = Retrofit.Builder()
+                .baseUrl(Constants.BASE_URL)
                 .build()
 
         return restAdapter

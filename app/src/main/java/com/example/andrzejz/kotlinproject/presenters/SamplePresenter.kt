@@ -18,7 +18,7 @@ public class SamplePresenter(receiver: SampleViewContract) : MvpPresenter<Sample
         api.getGoogle()
             .subscribe(
                 { Log.i("IP", it.ip) },
-                { Log.i("ERROR", it.getMessage()) }
+                { Log.i("ERROR", it.message) }
             )
     }
 

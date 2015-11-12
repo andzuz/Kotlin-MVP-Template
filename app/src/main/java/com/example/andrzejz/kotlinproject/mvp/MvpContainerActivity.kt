@@ -21,8 +21,6 @@ import com.example.andrzejz.kotlinproject.views.implementations.SampleViewImpl
 import kotlinx.android.synthetic.activity_main.*;
 import kotlinx.android.synthetic.view_sample.*;
 import retrofit.Callback
-import retrofit.RetrofitError
-import retrofit.client.Response
 
 public abstract  class MvpContainerActivity : AppCompatActivity() {
 

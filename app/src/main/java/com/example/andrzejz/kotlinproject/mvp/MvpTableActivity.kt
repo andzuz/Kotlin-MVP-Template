@@ -66,7 +66,7 @@ abstract class MvpTableActivity<PR, IT, VH: RecyclerView.ViewHolder> : MvpActivi
         }
 
         override fun getItemCount(): Int {
-            return items?.size() ?: 0
+            return items?.size ?: 0
         }
 
         fun addItems(items: ArrayList<IT>) {

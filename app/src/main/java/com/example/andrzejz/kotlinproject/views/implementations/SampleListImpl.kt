@@ -14,7 +14,7 @@ import java.util.*
  * Created by andrzejzuzak on 22/10/15.
  */
 
-class SampleListImpl(context: Context) : MvpTableView<SampleListPresenter, IpResponse, SampleViewHolder>(context) {
+class SampleListImpl(context: Context) : MvpTableView<SampleListPresenter<IpResponse>, IpResponse, SampleViewHolder>(context) {
 
     override fun afterListInit() {
         val sampleItem = IpResponse("SIALALA");
@@ -32,11 +32,9 @@ class SampleListImpl(context: Context) : MvpTableView<SampleListPresenter, IpRes
     }
 
     override fun onDataSetChanged(items: ArrayList<IpResponse>?) {
-        Log.i("DATA", "NOW:"+items?.size());
+        Log.i("DATA", "NOW:"+items?.size);
     }
 
-    override fun onPresenterCreate(): SampleListPresenter {
-        return SampleListPresenter(this);
-    }
+    override fun onPresenterCreate() = SampleListPresenter(this)
 
 }
