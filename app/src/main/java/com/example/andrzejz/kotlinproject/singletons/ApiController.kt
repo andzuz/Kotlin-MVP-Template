@@ -3,7 +3,9 @@ package com.example.andrzejz.kotlinproject.singletons
 import com.example.andrzejz.kotlinproject.network.models.IpResponse
 import com.example.andrzejz.kotlinproject.network.traits.ApiService
 import com.example.andrzejz.kotlinproject.singletons.Constants
+import retrofit.GsonConverterFactory
 import retrofit.Retrofit
+import retrofit.RxJavaCallAdapterFactory
 import rx.Observable
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
@@ -19,6 +21,8 @@ object ApiController {
     fun createAdapter(): Retrofit {
         val restAdapter = Retrofit.Builder()
                 .baseUrl(Constants.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build()
 
         return restAdapter
